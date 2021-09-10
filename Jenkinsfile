@@ -1,5 +1,17 @@
 pipeline {
-  agent any
+  agent {
+    node {
+
+  notifyStarted()
+
+  /* ... existing build steps ... */
+}
+  }
+def notifyStarted() {
+  // send to Slack
+  slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+    )
+  }
   stages {
     stage ('SCM checkout and docker login') {
       steps {
