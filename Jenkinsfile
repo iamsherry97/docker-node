@@ -33,11 +33,11 @@ pipeline {
     }
    }
  }
-post {
-  success {
-    slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '$JOB_NAME [$BUILD_NUMBER]' ($BUILD_URL)")
-  }
-  failure {
-    slackSend (color: '#FF0000', message: "FAILED: Job '$JOB_NAME [$BUILD_NUMBER]' ($BUILD_URL)")
-  }
-}                                        
+  post {
+    success {
+      slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '$JOB_NAME [$BUILD_NUMBER]' ($BUILD_URL)")
+    }
+    failure {
+      slackSend (color: '#FF0000', message: "FAILED: Job '$JOB_NAME [$BUILD_NUMBER]' ($BUILD_URL)")
+    }
+  }                                        
