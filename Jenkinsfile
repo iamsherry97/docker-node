@@ -23,6 +23,7 @@ pipeline {
     stage ('Deploy app on EC2') {
       steps {
         sshagent (credentials: ['sherryinstance']) {
+          sh 'ssh -o StrictHostKeyChecking=no ubuntu@54.245.202.139 uptime'
           sh 'ssh -v ubuntu@54.245.202.139 whoami'
           //sh 'ssh -v ubuntu@54.245.202.139 aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 489994096722.dkr.ecr.us-west-2.amazonaws.com'
           //sh 'ssh -v ubuntu@54.245.202.139 docker pull 489994096722.dkr.ecr.us-west-2.amazonaws.com/nodeapp:latest'
