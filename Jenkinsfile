@@ -22,11 +22,7 @@ pipeline {
     }
     stage ('Deploy app on EC2') {
       steps {
-        script {
-            node {
-              step([$class: 'AWSCodeDeployPublisher', applicationName: 'jenkinsapp', awsAccessKey: '', awsSecretKey: '', credentials: 'AWSaccess', deploymentGroupAppspec: false, deploymentGroupName: 'app', deploymentMethod: 'deploy', includes: '**', region: 'us-west-2', waitForCompletion: false])
-            }
-        }
+        step([$class: 'AWSCodeDeployPublisher', applicationName: 'jenkinsapp', awsAccessKey: '', awsSecretKey: '', credentials: 'AWSaccess', deploymentGroupAppspec: false, deploymentGroupName: 'app', deploymentMethod: 'deploy', includes: '**', region: 'us-west-2', waitForCompletion: false])
 //        sshagent (credentials: ['sherryinstance']) {
 //          sh 'ssh -o StrictHostKeyChecking=no ubuntu@54.245.202.139 uptime'
 //          sh 'ssh -v ubuntu@54.245.202.139 whoami'
