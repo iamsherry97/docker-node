@@ -32,7 +32,7 @@ pipeline {
 //          sh 'ssh -v ubuntu@54.245.202.139 docker pull 489994096722.dkr.ecr.us-west-2.amazonaws.com/nodeapp:latest'
 //          sh 'ssh -v ubuntu@54.245.202.139 docker run -d -p 3000 489994096722.dkr.ecr.us-west-2.amazonaws.com/nodeapp:latest'
           
-        }
+//        }
       }
     }
    }
